@@ -24,10 +24,10 @@ if (name in allowedusers):
         if Selectedoption == 1:
             wish = int(input("how much do you want to withdraw"))
             print('take your cash %s' %name)   
-        if Selectedoption == 2:
+        elif Selectedoption == 2:
             deps = input("how much would you like to deposit?")
             print('current balance=' + deps)
-        if Selectedoption == 3:
+        elif Selectedoption == 3:
             comps = input('what will you like to report?')
             print('thank you for contacting us') 
         else:

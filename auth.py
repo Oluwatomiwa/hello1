@@ -22,11 +22,9 @@ def init():
             print(register())
     else:
           print('you have selected invalid option')
-
+          
 def login():
     print('login into your account')
-
-    
     accountnumberfromuser = int(input('what is your account number\n'))
     password = input('what is your password\n')
 
@@ -34,12 +32,12 @@ def login():
         if(accountnumber == accountnumberfromuser):
             if(userdetails[3]== password):
                 bankoperation(userdetails)
-
-        print('invalid account or password')
-        login()
+        else:
+            print('invalid account number or password')
+            login()
     
 def register():
-    print('register')
+    print('Kindly register your account')
     email = input('what is your email\n')
     first_name = input('whats is your first name\n')
     last_name = input('what is your last name\n')
@@ -52,7 +50,6 @@ def register():
     print('==============================')
     print('your account number is %d' %accountnumber)
     print('Make sure you keep it safe')
-    print('===============================')
     login()
 def bankoperation(user):
     print('welcome %s %s' %(user[0], user[1]))
@@ -61,11 +58,9 @@ def bankoperation(user):
     selectedoption = int(input('what would you like to do? (1)withdrawal (2)deposit (3) logout\n'))
 
     if (selectedoption == 1):
-         
-        depositoperation()
+        withdrawal(user)
     elif (selectedoption == 2):
-          
-        withdrawal()
+        depositoperation(user)
     elif (selectedoption == 3):
          
         logout()
@@ -74,12 +69,13 @@ def bankoperation(user):
         exit()
     else:
             print('invalid option selected')
-def withdrawal():
-    print('withdrawal')
+def withdrawal(user):
+    withdraw = int(input("how much will you like to withdraw?\n"))
+    print('pls take your cash %s' %user[0])
 
-
-def depositoperation():
-    print('deposit operation')
+def depositoperation(user):
+    deps = input('how much will you like to deposit? \n')
+    print('your current balance is=' + deps)
 
 
 def generateaccountnumber():
